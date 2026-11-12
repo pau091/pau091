@@ -1,4 +1,4 @@
-"""Genera assets/stats.svg y assets/activity.svg con datos reales de GitHub.
+"""Genera assets/stats.svg con datos reales de GitHub.
 
 Se ejecuta a diario desde .github/workflows/stats.yml. Solo usa la librería estándar.
 Para probar el diseño sin conexión: python scripts/stats.py --demo
@@ -124,29 +124,24 @@ def stats_svg(d):
   <text x="{x+bw/2}" y="166" text-anchor="middle" font-size="9.5" font-weight="700" fill="{TEXT}" letter-spacing="1">{label}</text>
   <text x="{x+bw/2}" y="186" text-anchor="middle" font-size="10" font-weight="500" fill="{MUTED}">{sub}</text>"""
 
-    # Lenguajes más usados
-    lx, lw = 530, 438
-    langs = d["langs"][:6]
-    total = sum(s for _, s in langs) or 1
+    # Lenguajes usados (sin porcentajes)
+    icons = json.loads((ROOT / "scripts" / "icons.json").read_text())
+    lx = 530
     out += f"""
-  <text x="{lx}" y="96" font-size="11" font-weight="700" fill="{MUTED}" letter-spacing="2">LENGUAJES MÁS USADOS</text>
-  <rect x="{lx}" y="110" width="{lw}" height="12" rx="6" fill="{BORDER}"/>
-  <clipPath id="lc"><rect x="{lx}" y="110" width="{lw}" height="12" rx="6"/></clipPath>
-  <g clip-path="url(#lc)">"""
-    x = lx
-    for i, (name, size) in enumerate(langs):
-        w = lw * size / total
-        out += f'<rect x="{x:.1f}" y="110" width="{w + 0.5:.1f}" height="12" fill="{LANG_COLORS[i]}"/>'
-        x += w
-    out += "</g>"
-    for i, (name, size) in enumerate(langs):
-        cx = lx + (i % 3) * 146
-        cy = 152 + (i // 3) * 34
-        pct = 100 * size / total
+  <text x="{lx}" y="96" font-size="11" font-weight="700" fill="{MUTED}" letter-spacing="2">LENGUAJES USADOS</text>"""
+    for i, (name, _) in enumerate(d["langs"][:6]):
+        x = lx + (i % 3) * 148
+        y = 112 + (i // 3) * 54
         out += f"""
-  <circle cx="{cx+6}" cy="{cy-4}" r="5" fill="{LANG_COLORS[i]}"/>
-  <text x="{cx+18}" y="{cy}" font-size="13" font-weight="700" fill="{TEXT}">{name}</text>
-  <text x="{cx+18}" y="{cy+15}" font-size="10" font-weight="500" fill="{MUTED}">{pct:.1f}%</text>"""
+  <rect x="{x}" y="{y}" width="138" height="42" rx="21" fill="{BG}" stroke="{BORDER}"/>"""
+        if name in icons:
+            out += f"""
+  <path transform="translate({x+15},{y+11}) scale(0.8333)" d="{icons[name]}" fill="{PURPLE}"/>"""
+        else:
+            out += f"""
+  <circle cx="{x+25}" cy="{y+21}" r="6" fill="{PURPLE}"/>"""
+        out += f"""
+  <text x="{x+44}" y="{y+26}" font-size="13" font-weight="700" fill="{TEXT}">{name}</text>"""
 
     stamp = dt.date.today().strftime("%d/%m/%Y")
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">
@@ -197,7 +192,6 @@ def activity_svg(d):
 def main():
     data = demo() if "--demo" in sys.argv else fetch()
     (ROOT / "assets" / "stats.svg").write_text(stats_svg(data))
-    (ROOT / "assets" / "activity.svg").write_text(activity_svg(data))
     print("SVG generados")
 
 
