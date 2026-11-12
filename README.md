@@ -44,8 +44,6 @@
   <img width="100%" src="assets/stats.svg" alt="Estadísticas de GitHub y lenguajes usados"/>
   <br/><br/>
   <img width="100%" src="assets/experience.svg" alt="Experiencia: HTML, CSS, JavaScript, MySQL y n8n"/>
-  <br/><br/>
-  <img src="https://streak-stats.demolab.com?user=pau091&locale=es&background=140B10&border=3A2130&stroke=3A2130&ring=FF8FBF&fire=FFD1E3&currStreakNum=FFF0F6&sideNums=FFF0F6&currStreakLabel=FF8FBF&sideLabels=A8879A&dates=A8879A" alt="Racha de contribuciones"/>
 </div>
 
 <br/>
