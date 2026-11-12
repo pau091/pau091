@@ -13,10 +13,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 USER = os.environ.get("GH_USER", "pau091")
 
-BG, CARD, BORDER = "#0b0911", "#15111e", "#2b2140"
-PURPLE, PURPLE_D, LILAC = "#c06cff", "#7b3fbf", "#e4b8ff"
-TEXT, MUTED = "#ece6f7", "#8c80a6"
-LANG_COLORS = ["#c06cff", "#e4b8ff", "#9b5de5", "#7b3fbf", "#5a2d91", "#3d2366"]
+BG, CARD, BORDER = "#0a0608", "#140b10", "#3a2130"
+PURPLE, PURPLE_D, LILAC = "#ff8fbf", "#b5527f", "#ffd1e3"
+TEXT, MUTED = "#fff0f6", "#a8879a"
+LANG_COLORS = ["#ff8fbf", "#ffd1e3", "#e86a9e", "#b5527f", "#7d3558", "#4a2236"]
 
 QUERY = """
 query($login: String!) {
