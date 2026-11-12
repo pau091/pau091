@@ -39,12 +39,11 @@
 <img src="assets/sec-4.svg" width="100%" alt="Estadísticas"/>
 
 <div align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=pau091&show_icons=true&count_private=true&include_all_commits=true&locale=es&bg_color=15111e&title_color=c06cff&icon_color=e4b8ff&text_color=ece6f7&border_color=2b2140&border_radius=14" alt="Estadísticas de GitHub"/>
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=pau091&layout=compact&langs_count=6&locale=es&bg_color=15111e&title_color=c06cff&text_color=ece6f7&border_color=2b2140&border_radius=14" alt="Lenguajes más usados"/>
-  <br/>
+  <img width="100%" src="assets/stats.svg" alt="Estadísticas de GitHub y lenguajes más usados"/>
+  <br/><br/>
+  <img width="100%" src="assets/activity.svg" alt="Contribuciones de los últimos 30 días"/>
+  <br/><br/>
   <img src="https://streak-stats.demolab.com?user=pau091&locale=es&background=15111E&border=2B2140&stroke=2B2140&ring=C06CFF&fire=E4B8FF&currStreakNum=ECE6F7&sideNums=ECE6F7&currStreakLabel=C06CFF&sideLabels=8C80A6&dates=8C80A6" alt="Racha de contribuciones"/>
-  <br/>
-  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=pau091&bg_color=15111e&color=ece6f7&line=c06cff&point=e4b8ff&area=true&area_color=7b3fbf&title_color=c06cff&hide_border=false&border_color=2b2140&radius=14&custom_title=Actividad%20de%20contribuciones" alt="Gráfico de actividad"/>
 </div>
 
 <br/>
