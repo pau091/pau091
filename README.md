@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/banner.svg" width="100%" alt="Banner"/>
+  <img src="assets/banner.webp" width="100%" alt="Banner"/>
   <br/><br/>
   <img src="assets/header.svg" width="100%" alt="Paula Lisseth Navarro Cárdenas · Backend Developer Jr."/>
 </div>
