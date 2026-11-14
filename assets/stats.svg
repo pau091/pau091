@@ -9,7 +9,7 @@
 </defs>
   <rect width="1000" height="250" rx="18" fill="#140b10" stroke="#3a2130"/>
   <text x="32" y="44" font-size="15" font-weight="800" fill="#fff0f6" letter-spacing="3">PLAYER STATS</text>
-  <text x="968" y="44" text-anchor="end" font-size="11" font-weight="700" fill="#a8879a" letter-spacing="2">ACTUALIZADO 13/11/2026</text>
+  <text x="968" y="44" text-anchor="end" font-size="11" font-weight="700" fill="#a8879a" letter-spacing="2">ACTUALIZADO 14/11/2026</text>
   <line x1="32" y1="58" x2="968" y2="58" stroke="#3a2130"/>
   <line x1="32" y1="58" x2="140" y2="58" stroke="#ff8fbf" stroke-width="2" filter="url(#glow)"/>
   <rect x="32" y="80" width="104" height="130" rx="12" fill="#0a0608" stroke="#3a2130"/>
